@@ -1,70 +1,58 @@
-# Tela de Login em Java
+# Projeto de Conta Bancária
 
-## Introdução:
-Esta é uma classe em Java denominada LoginScreen que gerencia a funcionalidade de login de usuários por meio de um banco de dados de autenticação. Ela permite a verificação do nome de usuário e senha inseridos pelos usuários em um banco de dados armazenado e oferece a capacidade de adicionar novos usuários a esse banco de dados.
+## Introdução
+Este projeto simula um sistema simples de conta bancária que permite realizar saques para clientes especiais e comuns. Ele utiliza Java como linguagem de programação e a ferramenta Cucumber para testes de comportamento e validação das funcionalidades.
 
-## Recursos:
-
-- Verificação de credenciais de login.
-- Adição de novos usuários ao banco de dados.
-- Simples e fácil de utilizar.
+## Recursos
+- **Linguagem de programação:** Java
+- **Framework de teste:** Cucumber
+- **Funcionalidades:** Realização de saques para clientes especiais e comuns, atualização de saldo e verificação de limites.
 
 ## Testes Implementados
-Dentro do repositório, encontram-se testes JUnit específicos para validar a funcionalidade da classe LoginScreen. Esses testes foram elaborados para garantir a eficácia dos recursos de autenticação e gerenciamento de usuários. Cada cenário de teste abrange situações distintas:
+O projeto conta com os seguintes testes implementados:
 
-- `testSuccessfulLogin`: Avalia o processo de login bem-sucedido.
-- `testFailedLogin`: Aborda a verificação de uma tentativa de login sem sucesso.
-- `testAddUser`: Verifica a funcionalidade de adicionar um novo usuário ao banco de dados.
+### 1. Um cliente (especial|comum) com saldo atual de -(\\d+) reais
+Este teste verifica se um cliente especial ou comum é criado com um saldo inicial específico. Ele ajuda a garantir que os diferentes tipos de clientes sejam inicializados corretamente com saldos esperados.
 
-Para realizar a execução desses testes, é recomendado o uso da estrutura de testes JUnit no ambiente de desenvolvimento, garantindo assim a integridade e o funcionamento correto dos recursos implementados na classe LoginScreen.
+### 2. for solicitado um saque no valor de (\\d+) reais
+Neste teste, é verificado se a solicitação de um saque para um cliente específico é realizada corretamente. Isso inclui a confirmação de que o saque é efetuado sem erros.
 
-## Uso:
+### 3. deve efetuar o saque e atualizar o saldo da conta para -(\\d+) reais
+Esse teste valida se o saldo da conta é atualizado corretamente após a realização de um saque. Além disso, verifica se o saldo é ajustado para o valor esperado após o saque.
 
-### Instanciando a Classe:
+### 4. check more outcomes
+Este é um espaço reservado para possíveis extensões ou adições de verificações adicionais.
 
-````java
-LoginScreen loginScreen = new LoginScreen();
-````
-### Autenticando Usuários:
+## Cenários
+Os cenários de teste incluem:
 
-````java
-// Verificação de login
-boolean isAuthenticated = loginScreen.login("john","password123");
-if (isAuthenticated) {
-    // Executar ações após o login bem-sucedido
-    System.out.println("Login bem-sucedido!");
-} else {
-    // Tratar caso o login falhe
-    System.out.println("Login falhou. Verifique suas credenciais.");
-}
-````
-### Adicionando Novos Usuários:
+- Criação de cliente especial com saldo específico.
+- Criação de cliente comum com saldo específico.
+- Realização de saque para cliente especial.
+- Realização de saque para cliente comum.
 
-````java
-// Adição de um novo usuário
-loginScreen.addUser("testuser","testpassword");
-Testes
-````
+## Uso
+Para utilizar este projeto, siga as instruções abaixo:
 
-### Para testar a funcionalidade de login e adição de usuários, é possível utilizar o seguinte exemplo:
+1. Clone o repositório para o seu ambiente local.
+2. Certifique-se de ter configurado um ambiente Java.
+3. Abra o projeto em sua IDE preferida.
+4. Execute os testes utilizando a ferramenta Cucumber.
 
-### Teste de Login:
+## Uso dos Cenários
+Os cenários implementados podem ser utilizados para:
 
-````java
-boolean isAuthenticated = loginScreen.login("john", "password123");
-// Verificação se o login foi bem-sucedido ou falhou
-````
+1. **Um cliente (especial|comum) com saldo atual de -(\\d+) reais**
+   - Criar um cliente especial ou comum com um saldo inicial específico para testes.
 
-### Adição de Novo Usuário:
+2. **for solicitado um saque no valor de (\\d+) reais**
+   - Testar a solicitação de saques para clientes, verificando se o saque é realizado corretamente.
 
-````java
-loginScreen.addUser("testuser", "testpassword");
-// Confirmação da adição de um novo usuário
-````
+3. **deve efetuar o saque e atualizar o saldo da conta para -(\\d+) reais**
+   - Verificar se o saldo da conta é atualizado corretamente após o saque.
+
+## Todos os Testes
+Todos os testes implementados são automatizados e podem ser executados por meio da ferramenta Cucumber. Eles visam garantir o funcionamento adequado das funcionalidades da conta bancária, incluindo a criação de clientes, realização de saques e atualização de saldos.
 
 
-
-
-
-
-
+Este é um exemplo expandido do README para um projeto de conta bancária com testes implementados utilizando Cucumber e Java. Personalize-o conforme necessário para o seu projeto, adicionando informações específicas, instruções de instalação, configuração ou qualquer outro detalhe relevante.
